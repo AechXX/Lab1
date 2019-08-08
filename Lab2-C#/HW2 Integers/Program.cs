@@ -7,42 +7,76 @@ namespace HW2_Integers
         static void Main(string[] args)
         {
             //variable declaration
-            int nHilt, nBlade;
-            int nTotalLength;
+            int nAttack, nArmor;
+            int nInit1, nInit2, nInit3;
 
-            //prompt for sword stats
-            Console.WriteLine("~This program calculates whether a sword should be wielded in 1 or 2 hands.~");
+            //prompt for attack message
+            Console.WriteLine("~This program calculates whether a an attack will land on its intended target.~");
             Console.WriteLine("<------------------------------------------------------------>");
             Console.WriteLine("");
 
-            //prompt for hits, walks, and at bats
-            Console.WriteLine("Enter the sword's hilt length in inches: ");
-            nHilt = Convert.ToInt32(Console.ReadLine());
+            //prompt for attack and AC
+            Console.WriteLine("Enter the total attack: ");
+            nAttack = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter the player's blade length in inches: ");
-            nBlade = Convert.ToInt32(Console.ReadLine());
-
-            //calculation
-            nTotalLength = nHilt + nBlade;
+            Console.WriteLine("Enter the armor class: ");
+            nArmor = Convert.ToInt32(Console.ReadLine());
 
             //issue result and message
-            Console.WriteLine("This weapon is " + nTotalLength + " inches long.");
-
-            if (nTotalLength < 28)
+            if (nAttack < nArmor)
             {
-                Console.WriteLine("At less than 28 inches, this weapon can be wielded in one hand.");
-            }
-
-            else if (nTotalLength <= 50)
-            {
-                Console.WriteLine("Measured between 29 and 50 inches, this weapon can be wielded in either one or both hands.");
+                Console.WriteLine("Your oppenent has an AC of " + nArmor + " so your attack misses.");
             }
 
             else
             {
-                Console.WriteLine("At greater than 50 inches, this weapon should be wielded in both hands.");
+                Console.WriteLine("With an attack of " + nAttack + " you hit. How do you want to do this?...");
             }
 
+            Console.ReadLine();
+
+            //prompt for initiatives
+            Console.WriteLine("Roll for initiative... ");
+            nInit1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Roll for initiative... ");
+            nInit2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Roll for initiative... ");
+            nInit3 = Convert.ToInt32(Console.ReadLine());
+
+            //issue result and message
+            if (nInit1 > nInit2 && nInit1 > nInit3)
+            {
+                Console.WriteLine("The highest initiative is " + nInit1 + ".");
+            }
+
+            // highest initiative roll
+            else if (nInit2 > nInit1 && nInit2 > nInit3)
+            {
+                Console.WriteLine("The highest initiative is " + nInit2 + ".");
+            }
+
+            else if (nInit3 > nInit1 && nInit3 > nInit2)
+            {
+                Console.WriteLine("The highest initiative is " + nInit3 + ".");
+            }
+
+            // lowest initiative roll
+            if (nInit1 < nInit2 && nInit1 < nInit3)
+            {
+                Console.WriteLine("The lowest initiative is " + nInit1 + ".");
+            }
+
+            else if (nInit2 < nInit1 && nInit2 < nInit3)
+            {
+                Console.WriteLine("The lowest initiative is " + nInit2 + ".");
+            }
+
+            else if (nInit3 < nInit1 && nInit3 < nInit2)
+            {
+                Console.WriteLine("The lowest initiative is " + nInit3 + ".");
+            }
             Console.ReadLine();
         }
     }
