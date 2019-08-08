@@ -17,7 +17,7 @@ namespace Lab_2_Calculate_Batting_Average
             //variable declaration
             string strCharacterName;
             int nAttackBonus, nStrOrDex;
-            int nToHitTotal;
+            int nToHitTotal, nDifference, nProduct, nQuotient;
 
             //prompt for name and receive
             Console.WriteLine("~This program calculates a character's total attack bonus.~");
@@ -37,6 +37,24 @@ namespace Lab_2_Calculate_Batting_Average
             nToHitTotal = nAttackBonus + nStrOrDex;
 
             Console.WriteLine(strCharacterName + "'s total to hit bonus is " + nToHitTotal);
+            Console.ReadLine();
+
+            //difference, product, and quotient code because I'm lazy
+            nDifference = nAttackBonus - nStrOrDex;
+
+            Console.WriteLine("Difference: " + nDifference);
+            Console.ReadLine();
+
+            //difference, product, and quotient code because I'm lazy
+            nProduct = nAttackBonus * nStrOrDex;
+
+            Console.WriteLine("Product: " + nProduct);
+            Console.ReadLine();
+
+            //difference, product, and quotient code because I'm lazy
+            nQuotient = nAttackBonus / nStrOrDex;
+
+            Console.WriteLine("Quotient: " + nQuotient);
             Console.ReadLine();
 
         }
