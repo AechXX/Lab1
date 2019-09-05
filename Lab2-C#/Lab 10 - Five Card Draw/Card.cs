@@ -15,9 +15,13 @@ namespace Lab_10___Five_Card_Draw
 
         public int Val { get => val; set => val = value; }
 
+        /// <summary>
+        /// Displays the card rank and suit.
+        /// </summary>
+        /// <returns>Race and suit as a concatenated string.</returns>
         public override string ToString()
         {
-            return Rank + " " + Suit;
+            return string.Format("{0,2} {1}", rank, suit);
         }
 
         public Card(string rank, string suit, int val)
@@ -26,5 +30,6 @@ namespace Lab_10___Five_Card_Draw
             this.suit = suit;
             this.val = val;
         }
+
     }
 }
